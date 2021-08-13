@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MOVIES</title>
+</head>
+
+<body>
+	<header ng-include="'header.html'"></header>
+		<div class="container">
+			<div ng-show="isLoading">LOADING...</div>
+			<p>{{statusError}}</p>
+			<movies>
+				<ul style="display:inline-block" ng-repeat="movie in movies">
+					<div style="width:300px;float:left">
+						<img width="300px" ng-src="{{movie.images[0].url}}"/>
+						<br>
+						<p style="font-weight:bold">{{movie.title}}</p>
+					</div>
+				</ul>
+			</movies>
+		</div>
+	<footer ng-include="'footer.html'"></footer>
+</body>
+</html>
